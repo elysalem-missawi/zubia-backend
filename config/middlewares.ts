@@ -1,20 +1,24 @@
- export default [
-  'strapi::logger',
-  'strapi::errors',
-  'strapi::security',
+export default [
+  "strapi::logger",
+  "strapi::errors",
+  "strapi::security",
+
   {
-    name: 'strapi::cors',
+    name: "strapi::cors",
     config: {
-      origin: ['*'],
-      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
-      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
-      keepHeaderOnError: true,
+      origin: [
+        "http://localhost:3000",
+        "https://zubia-frontend.vercel.app",
+      ],
+      methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+      headers: ["Content-Type", "Authorization", "Origin", "Accept"],
+      credentials: false,
     },
   },
-  'strapi::poweredBy',
-  'strapi::query',
-  'strapi::body',
-  'strapi::session',
-  'strapi::favicon',
-  'strapi::public',
+
+  "strapi::query",
+  "strapi::body",
+  "strapi::session",
+  "strapi::favicon",
+  "strapi::public",
 ];
